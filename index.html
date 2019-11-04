@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Tic Tac Toe!</title>
+    <!-- <center>
+      <h1 id="playersTurn">CURRENT TURN:<br> Player X</output>
+    </center> -->
+
+    <style>
+
+      body{background-color: cornsilk;}
+
+      .cells{width: 300px;
+             overflow: hidden;
+             margin: 50px auto 0 auto; }
+
+      .cells .cell{float: left;
+                   width: 100px;
+                   height: 100px;
+                   outline: 1px solid black;
+                   transition: all .25s ease-in-out;
+                   font-family: sans-serif;
+                   font-size: 30px;
+                   text-align: center;
+                   line-height: 100px;
+                   cursor: pointer;}
+
+      .cells .cell:hover{background-color: rgb(189, 160, 128)}
+      span{
+        color: rgb(189, 160, 128);
+        font-size: 35px
+      }
+      button{background-color: rgb(189, 160, 128);
+             font-weight: bold;
+             color: white; cursor:
+             pointer; width: 150;
+             height: 40px;
+             font-size: 20px;}
+
+    </style>
+  </head>
+  <body>
+
+    <div class = "cells" id ="myCells">
+      <p><center> <span id = "currentTurn">Play</span> </center></p>
+      <div class = "cell" id="cell0"></div>
+      <div class = "cell" id="cell1"></div>
+      <div class = "cell" id="cell2"></div>
+      <div class = "cell" id="cell3"></div>
+      <div class = "cell" id="cell4"></div>
+      <div class = "cell" id="cell5"></div>
+      <div class = "cell" id="cell6"></div>
+      <div class = "cell" id="cell7"></div>
+      <div class = "cell" id="cell8"></div>
+    </div>
+
+  <center>
+	   <br><button onClick="playAgain()">Play again!</button>
+  </center>
+
+ <script src="ttt.js"></script>
+  </body>
+</html>

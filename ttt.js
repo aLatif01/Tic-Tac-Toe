@@ -61,24 +61,23 @@ if(cell0.innerHTML !== "" && cell1.innerHTML !== "" && cell2.innerHTML !== "" &&
   {currentTurn.innerHTML = "Draw game!";} //checks for a draw
 }
 
-function myWinners(myCell1,myCell2,myCell3){
+function myWinners(myCell1,myCell2,myCell3) {
     myCell1.classList.add("win");
     myCell2.classList.add("win");
     myCell3.classList.add("win");
     currentTurn.innerHTML = myCell1.innerHTML + " Won This Game!";
 }
 
-for(var i = 0; i < cells.length; i++){
+for(var i = 0; i < cells.length; i++) {
 
   cells[i].onclick = function(){
-     if(this.innerHTML !== "X" && this.innerHTML !== "O"){
+     if(this.innerHTML !== "X" && this.innerHTML !== "O") {
        if(X_or_O%2 === 0) {
           console.log(X_or_O); //for testing
           this.innerHTML = "X";
           currentTurn.innerHTML = "O's Turn";
           getWinner();
           X_or_O += 1;
-
        }
        else {
           console.log(X_or_O);  //for testing
@@ -91,43 +90,11 @@ for(var i = 0; i < cells.length; i++){
   };
 }
 
-function playAgain(){
-
+function playAgain() {
   for(var i = 0; i < cells.length; i++) {
     cells[i].classList.remove("win"); //takes away win state
     cells[i].innerHTML = "";  //resets the cells
     currentTurn.innerHTML = "Play";
     currentTurn.style.fontSize = "35px";
   }
-
 }
-
-
-
-
-
-
-
-// if(cell0.innerHTML !== "" && cell0.innerHTML === cell1.innerHTML && cell0.innerHTML === cell2.innerHTML)
-//   {myWinners(cell0,cell1,cell2);}
-//
-// if(cell3.innerHTML !== "" && cell3.innerHTML === cell4.innerHTML && cell3.innerHTML === cell5.innerHTML)
-//   {myWinners(cell3,cell4,cell5);}
-//
-// if(cell6.innerHTML !== "" && cell6.innerHTML === cell7.innerHTML && cell6.innerHTML === cell8.innerHTML)
-//   {myWinners(cell6,cell7,cell8);}
-//
-// if(cell0.innerHTML !== "" && cell0.innerHTML === cell3.innerHTML && cell0.innerHTML === cell6.innerHTML)
-//   {myWinners(cell0,cell3,cell6);}
-//
-// if(cell1.innerHTML !== "" && cell1.innerHTML === cell4.innerHTML && cell1.innerHTML === cell7.innerHTML)
-//   {myWinners(cell1,cell4,cell7);}
-//
-// if(cell2.innerHTML !== "" && cell2.innerHTML === cell5.innerHTML && cell2.innerHTML === cell8.innerHTML)
-//   {myWinners(cell2,cell5,cell8);}
-//
-// if(cell0.innerHTML !== "" && cell0.innerHTML === cell4.innerHTML && cell0.innerHTML === cell8.innerHTML)
-//   {myWinners(cell0,cell4,cell8);}
-//
-// if(cell2.innerHTML !== "" && cell2.innerHTML === cell4.innerHTML && cell2.innerHTML === cell6.innerHTML)
-//   {myWinners(cell2,cell4,cell6);}

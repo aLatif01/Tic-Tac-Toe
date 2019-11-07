@@ -58,7 +58,7 @@ if(checkForWin(cell0, cell4, cell8))
 if(checkForWin(cell6, cell4, cell2))
   myWinners(cell6, cell4, cell2);
 
-if(xorO % 8 == 0 && currentTurn.innerHTML != "X Won This Game!" && currentTurn.innerHTML != "O Won This Game!") {
+if(xorO > 0 && xorO % 8 == 0 && currentTurn.innerHTML != "X Won This Game!" && currentTurn.innerHTML != "O Won This Game!") {
   currentTurn.innerHTML = "Draw Game!"
   }
 

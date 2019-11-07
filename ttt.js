@@ -58,6 +58,10 @@ if(checkForWin(cell0, cell4, cell8))
 if(checkForWin(cell6, cell4, cell2))
   myWinners(cell6, cell4, cell2);
 
+if(xorO % 8 == 0 && currentTurn.innerHTML != "X Won This Game!" && currentTurn.innerHTML != "O Won This Game!") {
+  currentTurn.innerHTML = "Draw Game!"
+  }
+
 }
 
 function myWinners(myCell1,myCell2,myCell3) {
@@ -99,6 +103,6 @@ function playAgain() {
     cells[i].classList.remove("win"); //takes away win state
     cells[i].innerHTML = "";  //resets the cells
     currentTurn.innerHTML = "Play";
-    currentTurn.style.fontSize = "35px";
+    xorO = 0;
   }
 }

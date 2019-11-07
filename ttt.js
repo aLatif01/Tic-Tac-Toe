@@ -22,16 +22,16 @@ function getWinner() {
       cell7 = document.getElementById("cell7"),
       cell8 = document.getElementById("cell8");
 
-      const possibleWins = [
-        [0, 1, 2],
-      	[3, 4, 5],
-      	[6, 7, 8],
-      	[0, 3, 6],
-      	[1, 4, 7],
-      	[2, 5, 8],
-      	[0, 4, 8],
-      	[6, 4, 2]
-      ];
+// const possibleWins = [
+//   [0, 1, 2],
+// 	[3, 4, 5],
+// 	[6, 7, 8],
+// 	[0, 3, 6],
+// 	[1, 4, 7],
+// 	[2, 5, 8],
+// 	[0, 4, 8],
+// 	[6, 4, 2]
+// ];
 
 if(checkForWin(cell0, cell1, cell2))
   myWinners(cell0, cell1, cell2);
@@ -56,16 +56,19 @@ if(checkForWin(cell0, cell4, cell8))
 
 if(checkForWin(cell6, cell4, cell2))
   myWinners(cell6, cell4, cell2);
-
-if(cell0.innerHTML !== "" && cell1.innerHTML !== "" && cell2.innerHTML !== "" && cell3.innerHTML !== "" && cell4.innerHTML !== "" && cell5.innerHTML !== "" && cell6.innerHTML !== "" && cell7.innerHTML !== "" && cell8.innerHTML !== "")
-  {currentTurn.innerHTML = "Draw game!";} //checks for a draw
+  
 }
 
 function myWinners(myCell1,myCell2,myCell3) {
     myCell1.classList.add("win");
     myCell2.classList.add("win");
     myCell3.classList.add("win");
-    currentTurn.innerHTML = myCell1.innerHTML + " Won This Game!";
+    if(currentTurn.innerHTML == myCell1.innerHTML + " Won This Game!") {
+      currentTurn.innerHTML = currentTurn.innerHTML;  //fixes issue where game keeps updating if someone won
+    }
+    else {
+      currentTurn.innerHTML = myCell1.innerHTML + " Won This Game!";
+    }
 }
 
 for(var i = 0; i < cells.length; i++) {
